@@ -1,0 +1,52 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2">Task Details </div>
+        <div class="page__content shadow p-3 position-relative">
+          <div>Title: {{ this.task.title }}</div>
+          <div>description: {{ this.task.description }}</div>
+          <div>assigned_to: {{ this.task.assigned_to }}</div>
+          <div>Status: {{ this.task.status }}</div>
+          <div>category: {{ this.task.category }}</div>
+          <div>priority: {{ this.task.priority }}</div>
+          <div>due_date: {{ this.task.due_date }}</div>
+          <div>files: {{ this.task.files }}</div>
+          
+            
+
+<div>
+  <h6>Comments:</h6>
+  <table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Comment</th>
+        <th scope="col">Date</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let comment of comments">
+        
+        <td>{{ comment.comment }}</td>
+        <td>{{ comment.createdAt | date: 'medium' }}</td>
+        <!-- <td>
+          <button (click)="editComment(comment)">Edit</button>
+          <button (click)="deleteComment(comment._id)">Delete</button>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+                
+        </div>
+
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

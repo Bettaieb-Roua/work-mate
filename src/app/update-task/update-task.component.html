@@ -1,0 +1,114 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2">Update Task</div>
+        <div class="page__content shadow p-3 position-relative">
+          <form [formGroup]="task_form" (ngSubmit)="submit()">
+            <!-- Première ligne du formulaire(title + description) -->
+            <div class="row mb-3">
+              <div class="form-group col">
+                <label for="inputTitle" class="custom-style">Title</label>
+                <input type="text" class="form-control" formControlName="title" id="inputTitle" placeholder="">
+                <div class="alert alert-danger alert-style" *ngIf="task_form.get('title').touched && task_form.get('title').hasError('required')">
+                  Title input is required!
+                </div>
+              </div>
+              <div class="form-group col">
+                <label for="inputDescription" class="custom-style">Description</label>
+                <input type="text" class="form-control" id="inputDescription" formControlName="description" placeholder="">
+                <div class="alert alert-danger alert-style" *ngIf="task_form.get('description').touched && task_form.get('description').hasError('required')">
+                  Description input is required!
+                </div>
+              </div>
+            </div>
+                      <!-- Deuxième ligne du formulaire(due date + status) -->
+            <div class="row mb-3">
+              <div class="form-group col">
+                <label for="inputDueDate" class="custom-style">Due Date</label>
+                <input type="date" class="form-control" id="inputDueDate" formControlName="due_date" placeholder="">
+                <div class="alert alert-danger alert-style" *ngIf="task_form.get('due_date').touched && task_form.get('due_date').hasError('required')">
+                  Due Date input is required!
+                </div>
+              </div>
+              <div class="form-group col">
+                <label for="updateStatus" class="custom-style">Status</label>
+                <select class="form-control" id="updateStatus" formControlName="status">
+                  <option value="" selected disabled>Update status</option>
+                  <option value="New">New</option>
+                  <option value="In progress">In progress</option>
+                  <option value="Closed">Closed</option>
+                  <option value="Rejected">Rejected</option>
+                </select>
+                <div class="alert alert-danger alert-style" *ngIf="task_form.get('status').touched && task_form.get('status').hasError('required')">
+                  Status input is required!
+                </div>
+              </div>
+            </div>
+              <!-- Troisième ligne du formulaire(category + priority) -->
+  
+            <div class="row mb-3">
+              <div class="form-group col">
+                <label for="updateCategory" class="custom-style">Category</label>
+                <select class="form-control" id="updateCategory" formControlName="category">
+                  <option value="" selected disabled>Update category</option>
+                  <option value="Software Development">Software Development</option>
+                  <option value="Project Management">Project Management</option>
+                  <option value="Human Resources">Human Resources</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Customer Support">Customer Support</option>
+                    <option value="Testing and quality">Testing and quality</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Design and creativity">Design and creativity</option>
+                </select>
+                <div class="alert alert-danger alert-style" *ngIf="task_form.get('category').touched && task_form.get('category').hasError('required')">
+                  Category input is required!
+                </div>
+              </div>
+              <div class="form-group col">
+                <label for="updatePriority" class="custom-style">Priority</label>
+                <select class="form-control" id="updatePriority" formControlName="priority">
+                  <option value="" selected disabled>Update priority</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                  <option value="Urgent">Urgent</option>
+                </select>
+                <div class="alert alert-danger alert-style" *ngIf="task_form.get('priority').touched && task_form.get('priority').hasError('required')">
+                  Priority input is required!
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+                          <!-- quatrième ligne du formulaire(assigned to + Update files) -->
+  
+              <div class="form-group col">
+                <label for="assigned_to" class="custom-style">Assigned To</label>
+                <select class="form-control" id="assigned_to" formControlName="assigned_to">
+                  <option value="" selected disabled>update a user</option>
+                  <option *ngFor="let user of users" [value]="user.username">{{ user.username }}</option>
+                </select>
+                <div class="alert alert-danger alert-style" *ngIf="task_form.get('assigned_to').touched && task_form.get('assigned_to').hasError('required')">
+                  Assigned To input is required!
+                </div>
+              </div>
+              <div class="form-group col">
+                <label for="insertFiles" class="custom-style">Update Files</label>
+              <input type="file" class="form-control" id="insertFiles"  formControlName="files"  accept=".pdf, .doc, .docx">
+                <div class="alert alert-danger alert-style" *ngIf="task_form.get('files').touched && task_form.get('files').hasError('required')">
+                  Files input is required!
+                </div>
+              </div>
+            </div>
+            <br>
+                        <!-- Submission Button -->
+   <button type="submit" class="button-73">Submit</button>
+          </form>
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

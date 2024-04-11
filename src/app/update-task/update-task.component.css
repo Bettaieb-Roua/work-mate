@@ -1,0 +1,152 @@
+.alert-style{
+    font-size: 14px;
+  }
+  .custom-style{
+    font-size: 16px;
+  }
+  .form-group input {
+    font-size: 15px; /* Réduisez la taille de la police */
+    height: 36px; /* Ajustez la hauteur si nécessaire */
+  }
+  .page {
+      color: white;
+      padding: 0 1rem;
+      background: aliceblue;
+    }
+    
+    .page__box {
+      min-height: 120px;
+      background: #1e293b;
+      margin: 0 -1rem;
+      font-size: 36px;
+      border-radius: 10px 100px / 120px;  }
+    
+    .page__content {
+      min-height: calc(100vh - 178px);
+      border-radius: 10px;
+      margin-top: -2rem;
+      background: white;
+      color: black;
+      font-size: 2rem;
+      
+  
+    }
+    
+    .page__content-data {
+      top: 40%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+    }
+    :host {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    mat-drawer {
+      width: 260px;
+    }
+    mat-drawer-container {
+      height: 100%;
+      background-color: aliceblue;
+    }
+    
+    mat-drawer {
+      background: #0f172a;
+    }
+    .big-cellule{
+      width:100
+    }
+    .fixed-table {
+      max-height: 400px; /* Ajustez la hauteur maximale selon vos besoins */
+      overflow-y: auto;
+      display: block;
+    }
+  
+    /* icon buttons */
+    .button-72 {
+      appearance: none;
+      background-color: #FFFFFF;
+      border-radius: 10px;
+      border-style: none;
+      box-shadow:  #caddf8 0 -12px 6px inset;
+      box-sizing: border-box;
+      color: #000000;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Roboto, "Helvetica Neue", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -.24px;
+      margin: 0;
+      outline: none;
+      padding: 0.75rem 1rem;
+      quotes: auto;
+      text-align: center;
+      text-decoration: none;
+      transition: all .15s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    
+    .button-72:hover {
+      background-color: aliceblue;
+      box-shadow: #1e293b 0 -6px 8px inset;
+      transform: scale(1.125);
+    }
+    
+    .button-72:active {
+      transform: scale(1.025);
+    }
+    
+    @media (min-width: 768px) {
+      .button-72 {
+        font-size: 1.25rem;
+        padding: .02rem 0.3rem;
+      }
+    }
+  /* CSS */
+  
+  .button-73 {
+    appearance: none;
+    background-color: #FFFFFF;
+    border-radius: 10px 100px / 120px;
+    border-style: none;
+    box-shadow:  #caddf8 0 -12px 6px inset;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    margin: 0;
+    outline: none;
+    padding: 0.75rem 1rem;
+    quotes: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-73:hover {
+    background-color: aliceblue;
+    box-shadow: #1e293b 0 -6px 8px inset;
+    transform: scale(1.125);
+  }
+  
+  .button-73:active {
+    transform: scale(1.025);
+  }
+  
+  @media (min-width: 768px) {
+    .button-73 {
+      font-size: 1.25rem;
+      padding: .5rem 1rem;
+    }
+  }

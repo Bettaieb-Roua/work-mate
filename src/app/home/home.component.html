@@ -1,0 +1,49 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+    <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">Tasks List</div>
+      <div class="page__content shadow p-3 position-relative">
+        <button mat-button class="button-73 ml-2" (click)="addTask()">
+          <mat-icon>add</mat-icon>
+          Add Task
+        </button>
+        <div class="page__content-data position-absolute">
+          <table mat-table [dataSource]="tasks" class="fixed-table">
+            <!-- Colonnes générées dynamiquement -->
+            <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+              <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
+              <td mat-cell *matCellDef="let task "  >{{ task[column] }}</td>
+            </ng-container>
+
+            <!-- Colonnes pour les actions -->
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef>Actions</th>
+              <td mat-cell *matCellDef="let task">
+                <button mat-icon-button class="button-72" (click)="updateTask(task._id)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button class="button-72" [disabled]="task.assigned_to !== getProfileUsername()" (click)="deleteTask(task._id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button class="button-72"  (click)="addComment(task._id)">
+                  <mat-icon>comment</mat-icon>
+                </button>
+                <button mat-icon-button class="button-72"  (click)="viewTaskDetails(task._id)">
+                  <mat-icon>remove_red_eye</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <!-- Ligne du tableau générée dynamiquement -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns.concat('actions')"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns.concat('actions');"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

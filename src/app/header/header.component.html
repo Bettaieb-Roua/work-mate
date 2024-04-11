@@ -1,0 +1,25 @@
+<mat-toolbar class="custom-header">
+  <mat-toolbar-row class="justify-content-between">
+    <div col-xs-8>
+      <button mat-icon-button class="button-72"   (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <!-- Bouton du profil utilisateur -->
+      <button mat-button class="user mt-2 d-flex align-items-center">
+        <img src="./assets/userprofile.jpg" alt="" class="user-image mr-1 p-2" />
+        {{ getDynamicUsername()}}
+        <mat-icon class="user-image-icon ml-1"></mat-icon>
+      </button>
+
+      <!-- Bouton de déconnexion -->
+      <button mat-button class="button-73" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        Logout
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+

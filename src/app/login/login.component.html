@@ -1,0 +1,61 @@
+<!-- login.component.html -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="shadow-lg p-3 mb-5 bg-body rounded card">
+          <div class="card-body">
+            <h5 class="card-title custom-title">Login</h5>
+            <p class="mb-6">Please enter your user information.</p>
+            <form [formGroup]="login_form" (ngSubmit)="login()">
+              <!-- Champ de username -->
+              <div class="mb-3">
+                <label for="username" class="form-label">Username </label>
+                <input type="text" class="form-control"  formControlName="username" placeholder="User Name" >
+              </div>
+              <div class="alert alert-danger" *ngIf="login_form.get('username').touched && login_form.get('username').hasError('required')">
+                This username input is required!
+              </div>
+        
+              <!-- champ de email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="email" >
+              </div>
+              <div class="alert alert-danger" *ngIf="login_form.get('email').touched && login_form.get('email').hasError('required')">
+                This email input is required!
+              </div>
+              <div class="alert alert-danger" *ngIf="login_form.get('email').hasError('email')">
+                Not an email Format!
+              </div>
+        
+                <!-- champ de password -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="password" placeholder="*****************" >
+              </div>
+              <div class="alert alert-danger" *ngIf="login_form.get('password').touched && login_form.get('password').hasError('required')">
+                This password input is required!
+              </div>
+              <div class="alert alert-danger" *ngIf="login_form.get('password').hasError('minlength')">
+                Minimum 6 characters!
+              </div>
+              
+  
+              <div class="mb-3">
+                <button type="submit" [disabled]="login_form.invalid " class="form-control" class="btn btn-primary">Login</button>
+              </div>
+              <div class="d-md-flex justify-content-between mt-4">
+                <div class="mb-2 mb-md-0">
+                    <a class="fs-5 " routerLink="/signup" >Don't have an account ? sign up now </a>
+                </div>
+                <div>
+                    <a class="text-inherit fs-5" routerLink="/">Forgot your password?</a>
+                </div>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

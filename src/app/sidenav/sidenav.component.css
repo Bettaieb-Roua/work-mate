@@ -1,0 +1,52 @@
+:host .mat-icon {
+  vertical-align: middle;
+  margin-right: 1rem; 
+}
+/* Style du logo */
+.logo {
+  text-align: center;
+  padding: 2.6rem 1rem;
+}
+
+.logo img {
+  width: 200px;
+}
+
+/* Style du séparateur */
+.mat-divider {
+  border-top-width: 2px;
+  border-color: white;
+}
+
+/* Style du titre "MENU" */
+h2.matSubheader {
+  margin-top: 2rem !important;
+  color: #ADCFFF !important;
+  font-size: 1.4rem !important;
+  font-weight: bold !important;
+}
+
+/* Style des liens de la liste */
+.mat-list-item {
+  color: #94a3b8 !important;
+  font-size: 1.3rem;
+  height: 44px !important;
+  margin-bottom: 4px;
+}
+
+/* Style au survol des liens */
+.mat-list-item:hover {
+  color: #f2f5f7 !important;
+}
+.mat-list-item ::ng-deep .mat-list-item-content {
+  border-radius: 5px;
+  margin: 0 8px;
+}
+.mat-list-item ::ng-deep .mat-list-item-content:hover {
+  background: #2c3344 !important;
+}
+
+/* Style du lien actif */
+.list-item-active {
+  color: #f2f5f7 !important;
+}

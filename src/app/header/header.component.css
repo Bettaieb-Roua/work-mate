@@ -1,0 +1,128 @@
+ mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  } 
+  
+  ul li {
+    list-style: none;
+  }
+  
+  button {
+    outline: none;
+    border: 0;
+    background: transparent;
+  }
+  .custom-header {
+    margin-bottom: 0; /* Ajoutez la valeur de marge inférieure souhaitée */
+  }
+  .user {
+    font-size: 14px;
+  }
+  
+  mat-toolbar {
+    background: aliceblue;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .user-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .user-image-icon {
+    height: 18px;
+    font-size: 16px;
+  }
+  
+  .mat-menu-content {
+    width: 60px;
+  }
+    /* icon buttons */
+    .button-72 {
+      appearance: none;
+      background-color: #FFFFFF;
+      border-radius: 10px;
+      border-style: none;
+      box-shadow:  #caddf8 0 -12px 6px inset;
+      box-sizing: border-box;
+      color: #000000;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Roboto, "Helvetica Neue", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -.24px;
+      margin: 0;
+      outline: none;
+      padding: 0.75rem 1rem;
+      quotes: auto;
+      text-align: center;
+      text-decoration: none;
+      transition: all .15s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+    
+    .button-72:hover {
+      background-color: aliceblue;
+      box-shadow: #1e293b 0 -6px 8px inset;
+      transform: scale(1.125);
+    }
+    
+    .button-72:active {
+      transform: scale(1.025);
+    }
+    
+    @media (min-width: 768px) {
+      .button-72 {
+        font-size: 1.25rem;
+        padding: .02rem 0.3rem;
+      }
+    }
+  .button-73 {
+    appearance: none;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: #caddf8 0 -12px 6px inset;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -.24px;
+    margin: 0;
+    outline: none;
+    padding: 0.75rem 1rem;
+    quotes: auto;
+    text-align: center;
+    text-decoration: none;
+    transition: all .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-73:hover {
+    background-color: aliceblue;
+    box-shadow: #1e293b 0 -6px 8px inset;
+    transform: scale(1.125);
+  }
+  
+  .button-73:active {
+    transform: scale(1.025);
+  }
+  
+  @media (min-width: 768px) {
+    .button-73 {
+      font-size: 1.25rem;
+      padding: .5rem 1rem;
+    }
+  }
